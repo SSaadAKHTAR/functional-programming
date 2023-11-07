@@ -44,5 +44,40 @@ object Assignment2 {
 
     val list = List(4, 6, 9, 4, 5, 6)
     println("Euclidean norm of the above list is=" + fun(list))
+
+
+
+
+    //Ex 4
+    //11.2
+    val uList = List(1, 2, 3, 4, 5)
+    val uList_Twice = uList.map(_ * 2)
+    println(s"List elements doubled: $uList_Twice")
+    def f(x: Int) = if (x > 2) x * x else None
+
+    val uList_Squared = uList.filter(_ > 2).map(f)
+    println(s"List elements squared selectively: $uList_Squared")
+
+    //11.3
+    val uList2: List[Int] = List(1, 2, 3, 4, 5)
+
+    def g(v: Int): List[Int] = List(v - 1, v, v + 1)
+    val uListExtendedMap2 = uList2.map(g(_))
+    println(s"Extended list using map: $uListExtendedMap2")
+    val uListExtendedFlatMap2 = uList2.flatMap(g(_))
+    println(s"Extended list using flatMap: $uListExtendedFlatMap2")
+
+    //11.4
+    val uList3: List[Int] = List(1, 2, 3, 4, 5)
+
+    def function(x: Int) = if (x > 2) Some(x) else None
+
+    // Applying map and flatMap with built-in Options class
+    val uList_Selective = uList3.map(function(_))
+    println(s"Selective elements of List with map: $uList_Selective")
+
+    val uList_Selective_flatMap = uList3.flatMap(function(_))
+    println(s"Selective elements of List with flatMap: $uList_Selective_flatMap")
+
   }
 }
